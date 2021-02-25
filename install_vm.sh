@@ -1,4 +1,5 @@
 #!/bin/bash
+# added kubectl install
 
 echo "updating system, installing agent(proxmox) and docker"
 
@@ -19,5 +20,8 @@ sudo apt-get install docker-ce docker-ce-cli containerd.io
  echo "Installing Docker Compose"
  sudo curl -L "https://github.com/docker/compose/releases/download/1.28.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
  sudo chmod +x /usr/local/bin/docker-compose
+
+ echo "installing kubectl"
+ curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
 
  echo "Now log out and back in again"
